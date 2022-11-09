@@ -2,30 +2,20 @@ server:
   port: ${PORT:0}
 
 spring:
-#  datasource:
-#    driver-class-name: org.postgresql.Driver
-#    username: benedi
-#    password: benedi
-#    url: jdbc:postgresql://${vuelos-db:localhost}:${vuelos-port:5432}/vuelosdb
-#    platform: postgres
-#  jpa:
-#    show-sql: true
-#    generate-ddl: true
-#    hibernate:
-#      ddl-auto: create
-#    database: postgresql
-  couchbase:
-    bootstrap-hosts: "127.0.0.1"
-    bucket:
-      name: tbenedibucket
-      password: hiberus
-    data:
-      couchbase:
-        auto-index: true
+  data:
+    mongodb:
+      authentication-database: admin
+      username: root
+      password: root
+      database: vuelosdb
+      host: localhost
+      port: 27017
+  jpa:
+    show-sql: true
   mvc:
     pathmatch:
       matching-strategy: ant-path-matcher
 
 logging:
   level:
-    org.hibernate.SQL: debug
+    sql: debug

@@ -10,6 +10,7 @@ spring:
     initialization-mode: always
     continue-on-error: true
   jpa:
+    defer-datasource-initialization: true
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL8Dialect
     generate-ddl: true
